@@ -75,5 +75,22 @@ namespace AM.ApplicationCore.Services
             foreach (var v in req)
                 Console.WriteLine("flight date" + v.FlightDate + v.Destination);
         }
+
+        public int ProgrammedFlightNumber(DateTime startDate)
+        {
+            var req = from f in Flights
+                      where f.FlightDate.CompareTo(startDate) > 0
+                      && (f.FlightDate - startDate).TotalDays < 7
+                      select f;
+            return req.Count();
+        }
+
+        public float DurationAverage(string destination)
+        {
+            var req = from f in Flights
+                      where f.Destination == destination
+                      select f.EstimatedDuration;
+            return req.Average(); 
+        }
     }
 }

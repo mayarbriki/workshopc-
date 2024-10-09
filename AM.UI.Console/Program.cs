@@ -34,3 +34,5 @@ foreach (var item in flightMethods.GetFlightDates("Madrid"))
 }
 flightMethods.GetFlights("Destination ", "Paris");
 flightMethods.ShowFlightDetails(TestData.BoingPlane);
+Console.WriteLine(flightMethods.ProgrammedFlightNumber(new DateTime(2022, 02, 01)));
+Console.WriteLine(flightMethods.DurationAverage("Paris"));

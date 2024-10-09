@@ -16,3 +16,4 @@ C:\Users\Mayar\source\repos\AirportManagement\AM.UI.Console\bin\Debug\net8.0\AM.
 C:\Users\Mayar\source\repos\AirportManagement\AM.UI.Console\bin\Debug\net8.0\AM.ApplicationCore.pdb
 C:\Users\Mayar\source\repos\AirportManagement\AM.UI.Console\obj\Debug\net8.0\AM.UI.Console.csproj.AssemblyReference.cache
 C:\Users\Mayar\source\repos\AirportManagement\AM.UI.Console\obj\Debug\net8.0\AM.UI.Co.4983CB9F.Up2Date
+C:\Users\Mayar\source\repos\AirportManagement\AM.UI.Console\obj\Debug\net8.0\AM.UI.Console.sourcelink.json
