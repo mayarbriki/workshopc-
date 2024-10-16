@@ -19,7 +19,7 @@ namespace AM.ApplicationCore.domain
         public Plane Plane { get; set; }
 
         public ICollection<Passenger> Passengers { get; set; }
-        public override string ToString() { return "flight Id=" + this.FlightId + "Durée=" + this.EstimatedDuration; }
+        public override string ToString() { return "flight Id=" + this.FlightId + "Durée=" + this.EstimatedDuration ; }
 
     }
 }

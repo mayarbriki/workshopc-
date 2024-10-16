@@ -24,7 +24,7 @@ Staff staff = new Staff();
 Traveller traveller = new Traveller();
 staff.PassengerType();
 traveller.PassengerType();
-IFlightMethods flightMethods = new FlightMethods()
+FlightMethods flightMethods = new FlightMethods()
 {
     Flights = TestData.listFlights
 };
@@ -36,3 +36,8 @@ flightMethods.GetFlights("Destination ", "Paris");
 flightMethods.ShowFlightDetails(TestData.BoingPlane);
 Console.WriteLine(flightMethods.ProgrammedFlightNumber(new DateTime(2022, 02, 01)));
 Console.WriteLine(flightMethods.DurationAverage("Paris"));
+
+foreach (var item in flightMethods.OrderedDurationFlights())  { Console.WriteLine(item); }
+foreach (var item in flightMethods.SeniorTravellers(TestData.flight1)) { Console.WriteLine(item); }
+flightMethods.DestinationGroupedFlights();
+flightMethods.FlightDetailsDel(TestData.BoingPlane);
