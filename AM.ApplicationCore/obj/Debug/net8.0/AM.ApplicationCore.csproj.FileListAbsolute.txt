@@ -10,3 +10,4 @@ C:\Users\Mayar\source\repos\AirportManagement\AM.ApplicationCore\obj\Debug\net8.
 C:\Users\Mayar\source\repos\AirportManagement\AM.ApplicationCore\obj\Debug\net8.0\refint\AM.ApplicationCore.dll
 C:\Users\Mayar\source\repos\AirportManagement\AM.ApplicationCore\obj\Debug\net8.0\AM.ApplicationCore.pdb
 C:\Users\Mayar\source\repos\AirportManagement\AM.ApplicationCore\obj\Debug\net8.0\ref\AM.ApplicationCore.dll
+C:\Users\Mayar\source\repos\AirportManagement\AM.ApplicationCore\obj\Debug\net8.0\AM.ApplicationCore.csproj.AssemblyReference.cache

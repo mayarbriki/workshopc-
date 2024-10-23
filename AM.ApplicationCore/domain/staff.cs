@@ -9,7 +9,7 @@ namespace AM.ApplicationCore.domain
     public class Staff : Passenger
     {
         public DateTime EmploymentDate { get; set; }
-        public string Function { get; set; }
+        public string? Function { get; set; }
         public decimal Salary { get; set; }
         public override string ToString() { return base.ToString() + "Function=" + this.Function ; }
 

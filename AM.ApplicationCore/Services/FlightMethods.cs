@@ -129,23 +129,35 @@ namespace AM.ApplicationCore.Services
             return req.Average(); 
         }
         public IList<Flight> OrderedDurationFlights()
-        { var  req = from f in Flights
+        { /*var  req = from f in Flights
                      orderby f.EstimatedDuration descending
                      select f;
-            return req.ToList();
-                     }
+            return req.ToList();*/
+            var req = Flights
+      .OrderByDescending(f => f.EstimatedDuration)
+      .ToList();
+
+            return req;
+        }
 
         public IList<Passenger> SeniorTravellers(Flight flight)
         {
-            var req =from p in flight.Passengers
+            /*var req =from p in flight.Passengers
                      where p is Traveller 
                      orderby p.BirthDate ascending
                      select p;
-            return req.Take(1).ToList();    
+            return req.Take(1).ToList(); */
+            var req = flight.Passengers
+      .Where(p => p is Traveller)
+      .OrderBy(p => p.BirthDate)
+      ;
+
+            return req.Take(3).ToList();
+
         }
-        
+
         public IList<IGrouping<string, Flight>> DestinationGroupedFlights()
-        {
+        {/*
             var req = from f in Flights
                       group f by f.Destination;
             foreach (var g in req)
@@ -155,9 +167,26 @@ namespace AM.ApplicationCore.Services
                 foreach (var f in g)
                     Console.WriteLine("decollage" + f.FlightDate);
             }
-            return req.ToList();
+            return req.ToList();*/
+            var req = Flights
+     .GroupBy(f => f.Destination)
+     .ToList();
+
+            foreach (var g in req)
+            {
+                Console.WriteLine("Destination " + g.Key);
+                foreach (var f in g)
+                {
+                    Console.WriteLine("Décollage : " + f.FlightDate);
+                }
+            }
+
+            return req;
+
+
+
         }
 
-      
+
     }
 }

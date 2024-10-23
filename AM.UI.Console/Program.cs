@@ -2,6 +2,7 @@
 using AM.ApplicationCore.domain;
 using AM.ApplicationCore.Services;
 using AM.ApplicationCore.Interfaces;
+using AM.Infrastructure;
 
 Console.WriteLine("Hello, World!");
 Plane plane1 = new Plane();
@@ -41,3 +42,9 @@ foreach (var item in flightMethods.OrderedDurationFlights())  { Console.WriteLin
 foreach (var item in flightMethods.SeniorTravellers(TestData.flight1)) { Console.WriteLine(item); }
 flightMethods.DestinationGroupedFlights();
 flightMethods.FlightDetailsDel(TestData.BoingPlane);
+passenger.UpperFullName();
+Console.WriteLine("aprés:"  +passenger );
+AMContext context = new AMContext(); 
+context.Flights.Add(TestData.flight1);
+context.SaveChanges();
+Console.WriteLine("ok");
