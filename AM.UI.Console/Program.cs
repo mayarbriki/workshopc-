@@ -14,9 +14,12 @@ Console.WriteLine(plane1.ToString());
 Plane plane2 = new Plane(PlaneType.Airbus,300,new DateTime(2024,09,19));
 Passenger passenger = new Passenger
 {
-    FirstName = "mayar",
-    LastName = "briki",
-    EmailAddress="test"
+    FullName = new FullName
+    {
+        FirstName = "captain",
+        LastName = "captain"
+    } , 
+    EmailAddress ="test"
 
 
 };     

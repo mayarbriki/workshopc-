@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -9,28 +10,32 @@ namespace AM.ApplicationCore.domain
 {
     public class Passenger
     {
-        public int PassengerId { get; set; }
+        public FullName FullName { get; set; }
+        //public int PassengerId { get; set; }
+        [Display(Name = "Date of birht")]
+        [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
-        public string? PassportNumber { get; set; }
+        [Key, StringLength(7)]
+        public string PassportNumber { get; set; }
         public string? EmailAddress { get; set; }
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
+       
         public string? TelNumber { get; set; }
+        [RegularExpression("^@ [0 - 9]{8}$" )]
         public ICollection<Flight> Flights { get; set; }
-        public override string ToString() { return "FirstName=" + this.FirstName + "LastName=" + this.LastName; }
+        public override string ToString() { return "FirstName=" + this.FullName.FirstName + "LastName=" + this.FullName.LastName; }
         public bool CheckProfile(String firstName , string lastName , string email=null)
         {
             if (email != null)
             {
-                return this.FirstName == firstName;
-                return this.LastName == lastName;
+                return this.FullName.FirstName == firstName;
+                return this.FullName.LastName == lastName;
                 return this.EmailAddress == email;
 
 
             }
             else {
-                return this.FirstName == firstName;
-                return this.LastName == lastName;
+                return this.FullName.FirstName == firstName;
+                return this.FullName.LastName == lastName;
             }
 
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace AM.ApplicationCore.domain
     {
 
         public int PlaneId { get; set; }
+        [Range (0 , int.MaxValue)]
         public int Capacity { get; set; }
         public DateTime ManufactureDate { get; set; }
         public PlaneType PlaneType { get; set; }
@@ -25,7 +27,7 @@ namespace AM.ApplicationCore.domain
             this.Capacity = capacity;
             this.ManufactureDate = date;
         }
-
+        public ICollection<Flight> Flights { get; set; }
         public Plane()
         {
         }

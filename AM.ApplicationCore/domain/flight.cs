@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations.Schema;
 namespace AM.ApplicationCore.domain
 {
     public class Flight
@@ -14,8 +15,10 @@ namespace AM.ApplicationCore.domain
         public DateTime FlightDate { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public float EstimatedDuration { get; set; }
-
+        [ForeignKey("MyPlane")]
         public int PlaneId { get; set; }
+        [ForeignKey("PlaneId")]
+
         public Plane Plane { get; set; }
 
         public ICollection<Passenger> Passengers { get; set; }
